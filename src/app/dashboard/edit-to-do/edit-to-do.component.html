@@ -1,0 +1,39 @@
+<p> Edit To Do</p>
+<form [formGroup]="addNewToDo" (ngSubmit)="EditToDo()">
+                
+          
+    <div class="row">
+      <div class="col mb-2">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" name="title" formControlName="title" placeholder="Title" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+        <input type="hidden" id="id" name="id" formControlName="id"  >
+      </div>
+      
+    </div>
+    <div class="row">
+        <div class="col mb-2">
+          <label for="description" class="form-label">Description:</label>
+          <input type="text" id="description" name="description" formControlName="description" placeholder="Description" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+          
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col mb-2">
+          <label for="dueDate" class="form-label">Due Date:</label>
+          <input type="date" id="dueDate" name="dueDate" formControlName="dueDate" placeholder="Due Date" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+          
+        </div>
+        
+      </div>
+      <div class="row">
+        <label for="isComplete" class="form-label">Complete:</label>
+        <input *ngIf="data.isComplete==true" type="checkbox" formControlName="isComplete"  checked>
+        <input *ngIf="data.isComplete==false" type="checkbox" formControlName="isComplete" >
+      </div>
+
+   
+    
+  <button type="submit">Submit</button>
+</form>

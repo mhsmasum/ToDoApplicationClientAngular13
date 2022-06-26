@@ -1,0 +1,28 @@
+<p> New Note</p>
+<form [formGroup]="addNewNote" (ngSubmit)="AddNewNote()">
+                
+          
+    <div class="row">
+      <div class="col mb-2">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" name="title" formControlName="title" placeholder="Title" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+        
+      </div>
+      
+    </div>
+    <div class="row">
+        <div class="col mb-2">
+          <label for="description" class="form-label">Description:</label>
+          <textarea name="description" id="" cols="30" rows="10" formControlName="description" class="form-control form-control-sm"></textarea>
+          <span *ngIf="f.description.errors?.maxlength" class="text-danger">Max length 100 characters</span>
+          
+        </div>
+        
+      </div>
+
+      
+
+   
+    
+  <button type="submit">Submit</button>
+</form>

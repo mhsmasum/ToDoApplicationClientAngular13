@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+
+        </div>
+        <div class="col-4 text-end">
+            &nbsp; &nbsp; &nbsp;<button (click) ="SignOut()">Sign out</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="row">
+                    <h3>Todo</h3>
+            </div>
+            <button class="btn btn-success btn-block btn-sm mb-2" (click)="addNewTodo()">Add</button>
+            <div *ngFor="let item of todos">
+                <div class="row">
+                    <h6>{{item.title}}</h6>
+                    <p>{{item.description}}</p>
+                    <p class="text-sm" style="font-size: 12px;">Due-Date:{{item.dueDate | date: 'dd/MM/yyyy'}}</p>
+                    <p *ngIf="item.isComplete==true">Done</p>
+                    <p *ngIf="item.isComplete==false">Not Complete</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button *ngIf="item.isComplete==false" class="btn btn-warning btn-sm" (click)="editTodo(item)">Edit</button></div>
+                    <div class="col-6"><button class="btn btn-danger btn-sm" (click)="deleteTodo(item.id)">Delete</button></div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="row">
+                    <h3>Notes</h3>
+            </div>
+            <button class="btn btn-success btn-block btn-sm mb-2" (click)="addNewNote()">Add</button>
+            <div *ngFor="let item of notes">
+                <div class="row">
+                    <h6>{{item.title}}</h6>
+                    <p>{{item.description}}</p>
+                    <p class="text-sm" style="font-size: 12px;">{{item.createdAt | date: 'dd/MM/yyyy'}}</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-warning btn-sm" (click)="editNote(item)">Edit</button></div>
+                    <div class="col-6"><button class="btn btn-danger btn-sm" (click)="deleteNote(item.id)">Delete</button></div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+        <div class="col-3">
+            <div class="row">
+                    <h3>Bookmark</h3>
+            </div>
+            <div *ngFor="let item of bookmarks">
+                <div class="row">
+                    <h6>{{item.title}}</h6>
+                    <a href="{{item.url}}">{{item.url}}</a>
+                    
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="row">
+                    <h3>Reminder</h3>
+            </div>
+            <div *ngFor="let item of reminders">
+                <div class="row">
+                    <h6>{{item.title}}</h6>
+                    <p>{{item.reminderTime}}</p>
+                    
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+
+<div class="container">
+    <div class="col-3">
+  
+    </div>
+      <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 text-center  ">
+          <h2>Signin</h2>
+      </div>
+      <div class="row">
+          <div class="col-3">
+  
+          </div>
+          <div class="col-6">
+              <form [formGroup]="signInForm" (ngSubmit)="signinUser()">
+                
+          
+                    <div class="row">
+                      <div class="col mb-2">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="text" id="email" name="email" formControlName="email" placeholder="Your Email" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+                        
+                      </div>
+                      
+                    </div>
+                
+                    <div class="row">
+                      <div class="col mb-2">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" formControlName="password" placeholder="Your Password" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+                        
+                      </div>
+                      
+                    </div>
+                    
+                  <button type="submit">Submit</button>
+                  &nbsp; &nbsp; &nbsp;<a href="/">Signup</a>
+              </form>
+          </div>
+      </div>
+  </div>
+  

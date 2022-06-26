@@ -1,0 +1,34 @@
+<p> New To Do</p>
+<form [formGroup]="addNewToDo" (ngSubmit)="AddNewToDo()">
+                
+          
+    <div class="row">
+      <div class="col mb-2">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" name="title" formControlName="title" placeholder="Title" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+        
+      </div>
+      
+    </div>
+    <div class="row">
+        <div class="col mb-2">
+          <label for="description" class="form-label">Description:</label>
+          <input type="text" id="description" name="description" formControlName="description" placeholder="Description" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+          
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col mb-2">
+          <label for="dueDate" class="form-label">Due Date:</label>
+          <input type="date" id="dueDate" name="dueDate" formControlName="dueDate" placeholder="Due Date" required minlength="1" maxlength="250" class="form-control form-control-sm" >
+          
+        </div>
+        
+      </div>
+
+   
+    
+  <button type="submit">Submit</button>
+</form>
